@@ -28,7 +28,7 @@
                                 style="font-size: small;" /></li>
                         <template #dropdown>
                             <el-dropdown-menu>
-                                <router-link :to="{name:'BatteryPackMonitoring'}">電池組監控</router-link>
+                                <router-link :to="{name:'BatteryPackMonitoring'}" class="loadMenuDropDown" >電池組監控</router-link>
                             </el-dropdown-menu>
                         </template>
                     </el-dropdown>
