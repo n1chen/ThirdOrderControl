@@ -19,7 +19,7 @@ const routes = [
   {
     path: '/feild',
     name: 'feild',
-    component: () => import('../views/pages/HistoricalData.vue'),
+    component: () => import('@/views/fram/feild.vue'),
     children: [
       {
         path: '/BatteryPackMonitoring',
