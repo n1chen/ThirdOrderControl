@@ -36,6 +36,11 @@ const routes = [
         name: 'HistoricalData',
         component: () => import('../views/pages/HistoricalData.vue')
       },
+      {
+        path: '/ControlCommands',
+        name: 'ControlCommands',
+        component: () => import('../views/pages/ControlCommands.vue')
+      },
     ]
   }
 ]

@@ -1,29 +1,102 @@
 <template>
-     
     <div class="p-5">
         <h1 class="">電池組監控</h1>
-        <div class="row"> 
+        <div class="row">
+
             <div class="d-flex justify-content-between align-items-center mt-3">
-                <el-table size="small" stripe border class="rounded-3"
+                <el-table :data="tableData" size="small" stripe border class="rounded-3"
                     header-cell-class-name="tableHeaderStyle">
-                    <el-table-column label="Items" prop="code" align="center"></el-table-column>
-                    <el-table-column label="MBMU" prop="name" align="center"></el-table-column>
-                    <el-table-column label="SBMU01" prop="step_second" align="center"></el-table-column>
-                    <el-table-column label="SBMU02" prop="data" align="center"></el-table-column>
-                    <el-table-column label="SBMU03" prop="data" align="center"></el-table-column>
-                    <el-table-column label="SBMU04" prop="data" align="center"></el-table-column>
-                
+                    <el-table-column label="Items" prop="Items" align="center"></el-table-column>
+                    <el-table-column label="MBMU" prop="MBMU" align="center">
+                        <template #default="scope">
+                            <i :class="'fa-solid fa-circle ' + (scope.row.MBMU ? 'text-success' : 'text-danger')"></i>
+                        </template>
+                    </el-table-column>
+                    <el-table-column label="SBMU01" prop="SBMU01" align="center">
+                        <template #default="scope">
+                            <i :class="'fa-solid fa-circle ' + (scope.row.SBMU01 ? 'text-success' : 'text-danger')"></i>
+                        </template>
+                    </el-table-column>
+                    <el-table-column label="SBMU02" prop="SBMU02" align="center">
+                        <template #default="scope">
+                            <i :class="'fa-solid fa-circle ' + (scope.row.SBMU02 ? 'text-success' : 'text-danger')"></i>
+                        </template>
+                    </el-table-column>
+                    <el-table-column label="SBMU03" prop="SBMU03" align="center">
+                        <template #default="scope">
+                            <i :class="'fa-solid fa-circle ' + (scope.row.SBMU03 ? 'text-success' : 'text-danger')"></i>
+                        </template>
+                    </el-table-column>
+                    <el-table-column label="SBMU04" prop="SBMU04" align="center">
+                        <template #default="scope">
+                            <i :class="'fa-solid fa-circle' + (scope.row.SBMU04 ? 'text-success' : 'text-danger')"></i>
+                            <i :class="'fa-solid fa-circle' + (scope.row.SBMU04 ? 'text-success' : 'text-danger')"></i>
+                        </template>
+                    </el-table-column>
+ 
                 </el-table>
-                <!-- <div class="d-flex justify-content-end">
-                    <el-pagination layout="prev, pager, next" v-model:currentPage="PageController.pageInd"
-                        :page-size="PageController.countPerPage" :total="PageController.DataSource.length"
-                        @current-change="(ind) => { PageChanged(ind, PageController) }" />
-                </div> -->
+
+                
+
             </div>
         </div>
 
 
-        
+
 
     </div>
 </template>
+<script>
+
+export default {
+    components: {
+
+    },
+    data() {
+        return {
+            tableData: [{
+                Items: '風機故障',
+                MBMU: true,
+                SBMU01: true,
+                SBMU02: false,
+                SBMU03: true,
+                SBMU04: true,
+                alarm: false,
+            }, {
+                Items: '加熱故障',
+                MBMU: true,
+                SBMU01: true,
+                SBMU02: true,
+                SBMU03: true,
+                SBMU04: true,
+                alarm: false,
+            }, {
+                Items: '預充繼電器',
+                MBMU: true,
+                SBMU01: true,
+                SBMU02: true,
+                SBMU03: true,
+                SBMU04: true,
+                alarm: false,
+            }, {
+                Items: '主正閉合',
+                MBMU: false,
+                SBMU01: true,
+                SBMU02: true,
+                SBMU03: true,
+                SBMU04: true,
+                alarm: true,
+            }, {
+                Items: '主負閉合',
+                MBMU: true,
+                SBMU01: true,
+                SBMU02: true,
+                SBMU03: true,
+                SBMU04: true,
+                alarm: false,
+            }]
+        }
+    },
+    
+}
+</script>

@@ -1,35 +1,57 @@
 <template>
   <div>
     <h1>實時警告</h1>
+    
     <el-tabs type="border-card">
-      <el-tab-pane label="有級別警告">有級別警告
-        <el-table :data="tableData" stripe>
-          <el-table-column prop="" label="項目">
-          </el-table-column>
-          <el-table-column prop="" label="MBMU">
-          </el-table-column>
-          <el-table-column prop="" label="SBMU01">
-          </el-table-column>
-          <el-table-column prop="" label="SBMU02">
-          </el-table-column>
-          <el-table-column prop="" label="SBMU03">
-          </el-table-column>
-          <el-table-column prop="" label="SBMU04">
-          </el-table-column>
-        </el-table>
-      </el-tab-pane>
-      <el-tab-pane label="無級別警告">無級別警告
-       
-        <el-table :data="tableData" stripe >
-          <el-table-column prop="date" label="日期" width="180px">
-          </el-table-column>
-          <el-table-column prop="name" label="姓名" width="180px">
-          </el-table-column>
-          <el-table-column prop="address" label="地址" width="180px" >
-          </el-table-column>
-        </el-table>
-      </el-tab-pane>
+      <el-tab-pane label="有級別警告" style="margin-bottom: 10px;">有級別警告
+        <table>
+          <thead style="border-bottom: solid black 1px;">
+            <tr >
+              <th style="width: 100px;">項目</th>
+              <th style="width: 100px;">MBMU</th>
+              <th style="width: 100px;">SBMU01</th>
+              <th style="width: 100px;">SBMU02</th>
+              <th style="width: 100px;">SBMU03</th>
+              <th style="width: 100px;">SBMU04</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
 
+      </el-tab-pane>
+      <el-tab-pane label="無級別警告" style="margin-bottom: 10px;">無級別警告
+        <table>
+          <thead style="border-bottom: solid black 1px;">
+            <tr >
+              <th style="width: 100px;">項目</th>
+              <th style="width: 100px;">MBMU</th>
+              <th style="width: 100px;">SBMU01</th>
+              <th style="width: 100px;">SBMU02</th>
+              <th style="width: 100px;">SBMU03</th>
+              <th style="width: 100px;">SBMU04</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </el-tab-pane>
     </el-tabs>
   </div>
 </template>
