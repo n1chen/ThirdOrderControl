@@ -40,6 +40,10 @@ const routes = [
         path: '/ControlCommands',
         name: 'ControlCommands',
         component: () => import('../views/pages/ControlCommands.vue')
+      },{
+        path: '/DeviceParameters',
+        name: 'DeviceParameters',
+        component: () => import('../views/pages/DeviceParameters.vue')
       },
     ]
   }

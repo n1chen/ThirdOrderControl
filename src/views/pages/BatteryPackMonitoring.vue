@@ -1,6 +1,6 @@
 <template>
-    <div class="p-5">
-        <h1 class="">電池組監控</h1>
+    <div >
+        <h1 style="margin-top: 20px;">電池組監控</h1>
         <div class="row">
 
             <div class="d-flex justify-content-between align-items-center mt-3">

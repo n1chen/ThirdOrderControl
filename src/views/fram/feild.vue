@@ -47,12 +47,15 @@
                             class="list-group-item list-group-item-action list-group-item-light p-3" href="#!"
                             style="text-decoration:none;"><span data-feather="file">實時警告</span>
                         </a></router-link>
-                    <router-link :to="{ name: 'ControlCommands'}"><a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!"
-                        style="text-decoration:none;">控制命令</a></router-link>
+                    <router-link :to="{ name: 'ControlCommands' }"><a
+                            class="list-group-item list-group-item-action list-group-item-light p-3" href="#!"
+                            style="text-decoration:none;">控制命令</a></router-link>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!"
                         style="text-decoration:none;">實時曲線</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!"
                         style="text-decoration:none;">系統訊息</a>
+                    <router-link :to="{ name: 'DeviceParameters'}"><a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!"
+                        style="text-decoration:none;">設備參數</a></router-link>
                     <router-link :to="{ name: 'HistoricalData' }"><a
                             class="list-group-item list-group-item-action list-group-item-light p-3" href="#!"
                             style="text-decoration:none;"><span data-feather="layers"></span>

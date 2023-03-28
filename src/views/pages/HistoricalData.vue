@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="margin-top: 20px;">
         <h1>歷史數據</h1>
 <el-form :inline="true" :model="formInline" class="demo-form-inline">
   <el-form-item label="數據路徑:">
