@@ -1,6 +1,6 @@
 <template>
-  <div style="margin-top: 20px;">
-    <h1>實時警告</h1>
+  <div>
+    <h1 class="mb-3"><strong>實時警告</strong></h1>
     
     <el-tabs type="border-card">
       <el-tab-pane label="有級別警告" style="margin-bottom: 10px;">有級別警告

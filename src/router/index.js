@@ -40,10 +40,20 @@ const routes = [
         path: '/ControlCommands',
         name: 'ControlCommands',
         component: () => import('../views/pages/ControlCommands.vue')
-      },{
+      }, {
         path: '/DeviceParameters',
         name: 'DeviceParameters',
         component: () => import('../views/pages/DeviceParameters.vue')
+      },
+      {
+        path: '/ParameterSettings',
+        name: 'ParameterSettings',
+        component: () => import('../views/pages/ParameterSettings.vue')
+      },
+      {
+        path: '/UserManagement',
+        name: 'UserManagement',
+        component: () => import('../views/pages/UserManagement.vue')
       },
     ]
   }

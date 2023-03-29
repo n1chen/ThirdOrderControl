@@ -1,8 +1,8 @@
 <template>
     <div >
-        <h1 style="margin-top: 20px;">電池組監控</h1>
+        <h1 class="mb-3"><strong>電池組監控</strong></h1>
+        
         <div class="row">
-
             <div class="d-flex justify-content-between align-items-center mt-3">
                 <el-table :data="tableData" size="small" stripe border class="rounded-3"
                     header-cell-class-name="tableHeaderStyle">

@@ -1,96 +1,105 @@
 <template>
-    <!-- Top navigation-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom" style="height: 58px;">
-        <div class="container-fluid">
-            <div class="sidebar-heading border-bottom bg-light" style="height: 50px;"><img src="@/assets/FEMCBanner.png"
-                    alt="" style="height: 40px;width: auto;">
-            </div>
-            <div style="margin-left: 60px;">
-                <button class="btn navbar-toggler" @click="CollapseClick"><span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
+    <div class="wrapper">
+        <nav id="sidebar" :class="$store.state.isCollapse ? 'sidebar collapsed d-flex' : 'sidebar js-sidebar d-flex'" style="padding-right: 10px;;">
+            <div class="sidebar-content js-simplebar">
+                <a class="sidebar-brand" href="#">
+                    <img src="@/assets/FEMCBanner.png" alt="" style="height: 35px;width: auto;">
+                </a>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-item ">
+                        <a class="sidebar-link" href="#">
+                            <span class="align-middle"><i
+                                    class="fa-solid fa-arrow-right-from-bracket text-light"></i>關閉系統</span>
+                        </a>
+                    </li>
+                    <div>
+                        <!-- 選項展開 -->
+                        <a class=" collapsed sidebar-link " href="#" data-bs-toggle="collapse"
+                            data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <span class="align-middle"><i class="fa-regular fa-clock text-light"></i>實時監測</span>
+                        </a>
+                        <li class="collapse list-group-item list-group-item-action sidebar-item" id="collapseLayouts"
+                            aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion" style="margin-left: 40px;">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <router-link :to="{ name: 'BatteryPackMonitoring' }"><a class="sidebar-link" href="#">
+                                <span class="align-middle">電池組監控</span>
+                            </a></router-link>
+                            </nav>
+
+                        </li>
+                    </div>
+
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="#">
+                            <span class="align-middle"><i class="fa-solid fa-bug-slash text-light"></i>實時告警</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <router-link :to="{ name: 'ControlCommands' }"><a class="sidebar-link" href="#">
+                                <span class="align-middle"><i
+                                        class="fa-solid fa-screwdriver-wrench text-light"></i>控制命令</span>
+                            </a></router-link>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="#">
+                            <span class="align-middle"><i class="fa-solid fa-chart-line text-light"></i>實時曲線</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <router-link :to="{ name: 'DeviceParameters' }"><a class="sidebar-link" href="#">
+                                <span class="align-middle"><i class="fa-solid fa-list text-light"></i>設備參數</span>
+                            </a></router-link>
+                    </li>
+                    <li class="sidebar-item">
+                        <router-link :to="{ name: 'HistoricalData' }"><a class="sidebar-link" href="#">
+                                <span class="align-middle"><i class="fa-solid fa-database text-light"></i>歷史數據</span>
+                            </a></router-link>
+                    </li>
+                    <li class="sidebar-item">
+                        <router-link :to="{ name: 'ParameterSettings' }"><a class="sidebar-link" href="#">
+                                <span class="align-middle"><i class="fa-solid fa-gear text-light"></i>參數設置</span>
+                            </a></router-link>
+                    </li>
+                    <li class="sidebar-item">
+                        <router-link :to="{ name: 'UserManagement' }"><a class="sidebar-link" href="#">
+                                <span class="align-middle"><i class="fa-solid fa-users text-light"></i>用戶管理</span>
+                            </a></router-link>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="main">
+            <nav class="navbar navbar-expand navbar-light navbar-bg">
+                <a class="sidebar-toggle js-sidebar-toggle" @click="CollapseClick">
+                    <i class="hamburger align-self-center"></i>
+                </a>
+                <div class="collapse navbar-collapse" >
                 <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
                     <li class="nav-item"><a class="nav-link" href="#!">Sign In</a></li>
                 </ul>
             </div>
-        </div>
-    </nav>
 
-    <div class="d-flex" id="wrapper" :class="$store.state.isCollapse ? 'sb-sidenav-toggled d-flex' : 'd-flex'">
-        <!-- Sidebar-->
-        <div class="border-end bg-white">
 
-            <div id="sidebar-wrapper">
-                <div class="list-group list-group-flush">
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">關閉系統</a>
-                    <div>
-                        <!-- 選項展開 -->
-                        <a class=" collapsed list-group-item list-group-item-action list-group-item-light p-3" href="#"
-                            data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false"
-                            aria-controls="collapseLayouts">
-                            實時監測
+            </nav>
 
-                        </a>
-                        <div class="collapse list-group-item list-group-item-action " id="collapseLayouts"
-                            aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav ">
-                                <router-link :to="{ name: 'BatteryPackMonitoring' }" style="color: black;"><a
-                                        class="nav-link " href="#">電池組監控</a></router-link>
-                            </nav>
-                        </div>
-                    </div>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!"
-                        style="text-decoration:none;">設備檢測</a>
-                    <router-link :to="{ name: 'RealtimeWarning' }"><a
-                            class="list-group-item list-group-item-action list-group-item-light p-3" href="#!"
-                            style="text-decoration:none;"><span data-feather="file">實時警告</span>
-                        </a></router-link>
-                    <router-link :to="{ name: 'ControlCommands' }"><a
-                            class="list-group-item list-group-item-action list-group-item-light p-3" href="#!"
-                            style="text-decoration:none;">控制命令</a></router-link>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!"
-                        style="text-decoration:none;">實時曲線</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!"
-                        style="text-decoration:none;">系統訊息</a>
-                    <router-link :to="{ name: 'DeviceParameters'}"><a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!"
-                        style="text-decoration:none;">設備參數</a></router-link>
-                    <router-link :to="{ name: 'HistoricalData' }"><a
-                            class="list-group-item list-group-item-action list-group-item-light p-3" href="#!"
-                            style="text-decoration:none;"><span data-feather="layers"></span>
-                            歷史數據</a></router-link>
-                </div>
-            </div>
-        </div>
-
-        <!-- Page content wrapper-->
-        <div id="page-content-wrapper">
-            <!-- Page content-->
-            <div class="container-fluid">
-                <div class="" style="padding-left: 10px;">
+            <main class="content">
+                <div class="container-fluid p-0">
                     <router-view></router-view>
                 </div>
-            </div>
+            </main>
         </div>
     </div>
 </template>
 
 <script >
-// import avatar from '@/components/Avatar.vue'
-// import settingdemo from '@/JSON/SettingDemo.json';
 
 export default {
     components: {
-        // 'avatar': avatar
+
     },
     data() {
-        // return {
-        //     active: false,
-        //     isCollapse: true,
-        //     ProjectName: process.env.VUE_APP_Project,
-        //     settingdemo,
-        // };
+
     },
     mounted() {
 

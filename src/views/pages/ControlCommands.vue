@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1 style="margin-top: 20px;">控制命令</h1>
-
+    <h1 class="mb-3"><strong>控制命令</strong></h1>
+   
     <el-form :inline="true" :model="formInline" class="demo-form-inline" style="margin-top: 10px;">
       <el-form-item label="櫃號">
         <el-select v-model="formInline.region" placeholder="">
@@ -14,8 +14,8 @@
 
   <div style="margin-top: 10px;">
     繼電控制器
-    <el-table :data="tableData" style="width: 100%" height="400">
-      <el-table-column fixed prop="Item" label="項目" width="200">
+    <el-table :data="tableData" style="width: 100%" height="auto">
+      <el-table-column fixed prop="Item" label="項目" width="150">
       </el-table-column>
       <el-table-column label="操作" width="250">
         <template #default="scope">
@@ -23,7 +23,7 @@
           <el-button size="mini" @click="openButton(scope.row.Item)"> 斷開</el-button>
         </template>
       </el-table-column>
-      <el-table-column prop="result" label="顯示" width="150">
+      <el-table-column prop="result" label="顯示" width="auto">
         <i :class="iconClass"></i>
       </el-table-column>
     </el-table>
