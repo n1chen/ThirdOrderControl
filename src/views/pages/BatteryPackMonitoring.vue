@@ -1,7 +1,7 @@
 <template>
-    <div >
+    <div>
         <h1 class="mb-3"><strong>電池組監控</strong></h1>
-        
+
         <div class="row">
             <div class="d-flex justify-content-between align-items-center mt-3">
                 <el-table :data="tableData" size="small" stripe border class="rounded-3"
@@ -29,16 +29,17 @@
                     </el-table-column>
                     <el-table-column label="SBMU04" prop="SBMU04" align="center">
                         <template #default="scope">
-                            <i :class="'fa-solid fa-circle' + (scope.row.SBMU04 ? 'text-success' : 'text-danger')"></i>
-                            <i :class="'fa-solid fa-circle' + (scope.row.SBMU04 ? 'text-success' : 'text-danger')"></i>
+                            <i :class="'fa-solid fa-circle ' + (scope.row.SBMU04 ? 'text-success' : 'text-danger')"></i>
                         </template>
                     </el-table-column>
- 
                 </el-table>
+
 
                 
 
             </div>
+            
+
         </div>
 
 
@@ -54,6 +55,7 @@ export default {
     },
     data() {
         return {
+            isDisabled: true,
             tableData: [{
                 Items: '風機故障',
                 MBMU: true,
@@ -97,6 +99,6 @@ export default {
             }]
         }
     },
-    
+
 }
 </script>

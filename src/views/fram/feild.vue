@@ -31,9 +31,9 @@
                     </div>
 
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="#">
+                        <router-link :to="{name: 'RealtimeWarning' }"><a class="sidebar-link" href="#">
                             <span class="align-middle"><i class="fa-solid fa-bug-slash text-light"></i>實時告警</span>
-                        </a>
+                        </a></router-link>
                     </li>
                     <li class="sidebar-item">
                         <router-link :to="{ name: 'ControlCommands' }"><a class="sidebar-link" href="#">
