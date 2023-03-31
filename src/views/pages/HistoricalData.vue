@@ -1,27 +1,36 @@
 <template>
   <div>
     <h1 class="mb-3"><strong>歷史數據</strong></h1>
-    
-    <el-form :inline="true" :model="formInline" class="demo-form-inline">
-      <el-form-item label="數據路徑:">
-        <el-input v-model="formInline.user" placeholder=""></el-input>
-      </el-form-item>
-      <el-form-item label="表名">
-        <el-select v-model="formInline.region" placeholder="">
-          <el-option label="" value="shanghai"></el-option>
-          <el-option label="" value="beijing"></el-option>
-        </el-select>
-      </el-form-item>
-      <el-form-item label="信號名稱">
-        <el-select v-model="formInline.region" placeholder="">
-          <el-option label="" value="shanghai"></el-option>
-          <el-option label="" value="beijing"></el-option>
-        </el-select>
-      </el-form-item>
-      <el-form-item>
-        <el-button type="info" @click="onSubmit">查詢</el-button>
-      </el-form-item>
-    </el-form>
+
+    <div class="row">
+      <el-form ref="form" label-width="80px">
+        <el-form-item label="數據路徑:">
+          <el-input></el-input>
+        </el-form-item>
+        <div class="row">
+          <div class="col-auto"><el-form-item label="表名:">
+              <el-select placeholder="">
+                <el-option label="" value=""></el-option>
+                <el-option label="" value=""></el-option>
+              </el-select>
+            </el-form-item>
+          </div>
+          <div class="col-auto"><el-form-item label="信號名稱:">
+              <el-select placeholder="">
+                <el-option label="" value=""></el-option>
+                <el-option label="" value=""></el-option>
+              </el-select>
+            </el-form-item>
+          </div>
+          <div class="col-auto"><el-form-item>
+              <el-button type="info" @click="onSubmit">查詢</el-button>
+            </el-form-item>
+          </div>
+        </div>
+
+      </el-form>
+    </div>
+
   </div>
 
 

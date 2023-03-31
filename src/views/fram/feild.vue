@@ -13,12 +13,13 @@
                                     class="fa-solid fa-arrow-right-from-bracket text-light"></i>關閉系統</span>
                         </a>
                     </li>
+
                     <div>
                         <!-- 選項展開 -->
-                        <a class=" collapsed sidebar-link " href="#" data-bs-toggle="collapse"
+                        <router-link :to="{nmae: 'RealtimeMonitoring' }"><a class=" collapsed sidebar-link " href="#" data-bs-toggle="collapse"
                             data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                            <span class="align-middle"><i class="fa-regular fa-clock text-light"></i>實時監測</span>
-                        </a>
+                            <span class="align-middle"><i class="fa-regular fa-clock text-light"></i>即時監控</span>
+                        </a></router-link>
                         <li class="collapse list-group-item list-group-item-action sidebar-item" id="collapseLayouts"
                             aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion" style="margin-left: 40px;">
                             <nav class="sb-sidenav-menu-nested nav">
@@ -32,7 +33,7 @@
 
                     <li class="sidebar-item">
                         <router-link :to="{name: 'RealtimeWarning' }"><a class="sidebar-link" href="#">
-                            <span class="align-middle"><i class="fa-solid fa-bug-slash text-light"></i>實時告警</span>
+                            <span class="align-middle"><i class="fa-solid fa-bug-slash text-light"></i>即時告警</span>
                         </a></router-link>
                     </li>
                     <li class="sidebar-item">
@@ -43,7 +44,7 @@
                     </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="#">
-                            <span class="align-middle"><i class="fa-solid fa-chart-line text-light"></i>實時曲線</span>
+                            <span class="align-middle"><i class="fa-solid fa-chart-line text-light"></i>即時曲線</span>
                         </a>
                     </li>
                     <li class="sidebar-item">

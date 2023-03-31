@@ -4,60 +4,91 @@
 
         <el-tabs type="border-card">
             <el-tab-pane label="參數設置" style="margin-bottom: 10px;">
-                <div class="row" style="margin-top: 10px;">
-                    <div>
-                        <p><strong>數據存儲</strong></p>
-                        <span>路徑:</span> <el-input placeholder="" style="width: 150px;"></el-input> <el-button type="info"
-                            plain style="margin-left: 5px;">瀏覽</el-button>
-                    </div>
-                    <div style="margin-top: 5px;">
-                        <span>文件名:</span> <el-input placeholder="" style="width: 150px;"></el-input> <span
-                            style="margin-left: 5px;">_StartDate_YY-MM-DD</span>
-                    </div>
-                    <div style="margin-top: 5px;">
-                        <span>時間間隔:</span> <el-input placeholder="" style="width: 150px;"></el-input><span
-                            style="margin-left: 5px;">ms</span>
-                    </div>
-                    <div style="margin-top: 5px;">
-                        <span>存儲: </span><el-checkbox></el-checkbox>
-                    </div>
-                    <el-divider></el-divider>
-                </div>
-                <div class="row" style="margin-top: 5px;">
-                    <div class="col" style="margin-right: 5px;">
-                        <div>
-                            <p><strong>LAN參數</strong></p>
-                            <span>服服務器IP(IPV4): </span><el-input placeholder="" style="width: 150px;"></el-input><el-button
-                                type="info" plain style="margin-left: 5px;">獲取本地IP</el-button>
-                        </div>
-                        <div style="margin-top: 5px;">
-                            <span>文件名: </span><el-input placeholder="" style="width: 150px;"></el-input> <span
-                                style="margin-left: 5px;">_StartDate_YY-MM-DD</span>
-                        </div>
-                        <div style="margin-top: 5px;">
-                            <span>ModBus端口: </span> <el-input placeholder="" style="width: 150px;"></el-input><span
-                                style="margin-left: 5px;">ms</span>
-                        </div>
-                        <div style="margin-top: 5px;">
-                            <span>開啟服務: </span><el-checkbox></el-checkbox>
-                        </div>
 
+                <div class="row" style="margin-top: 10px;">
+                    <p><strong>數據存儲</strong></p>
+                    <el-form ref="form" label-width="80px">
+                        <div class="row">
+                            <div class="col-5">
+                                <el-form-item label="數據路徑:">
+                                    <el-input></el-input>
+                                </el-form-item>
+                            </div>
+                            <div class="col-auto">
+                                <el-form-item>
+                                    <el-button type="info">瀏覽</el-button>
+                                </el-form-item>
+                            </div>
+                        </div>
+                        <el-form-item label="文件名:">
+                            <el-input placeholder="_StartDate_YY-MM-DD" style="width: 150px;"></el-input>
+                        </el-form-item>
+                        <el-form-item label="時間間隔:">
+                            <el-input placeholder="ms" style="width: 150px;"></el-input>
+                        </el-form-item>
+
+                        <el-form-item label="儲存">
+                            <el-checkbox-group>
+                                <el-checkbox label="" name="type"></el-checkbox>
+                            </el-checkbox-group>
+                        </el-form-item>
+                    </el-form>
+                </div>
+                <el-divider></el-divider>
+                <div class="row" style="margin-top: 5px;">
+                    <div class="col">
+                        <p><strong>LAN參數</strong></p>
+                        <el-form :label-position="labelPosition" label-width="80px" :model="formLabelAlign">
+                            <el-form-item label="服務器IP(IPV4)">
+                                <el-input></el-input>
+                            </el-form-item>
+                            <el-form-item>
+                                <el-button type="info">獲取本地IP</el-button>
+                            </el-form-item>
+                            <el-form-item label="文件名">
+                                <el-input></el-input>
+                            </el-form-item>
+                            <el-form-item label="ModBus端口">
+                                <el-input></el-input>
+                            </el-form-item>
+                            <el-form-item label="開啟服務">
+                                <el-checkbox-group>
+                                    <el-checkbox label="" name="type"></el-checkbox>
+                                </el-checkbox-group>
+                            </el-form-item>
+                        </el-form>
                     </div>
+
                     <el-divider direction="vertical" style="height: 180px;"></el-divider>
                     <div class="col" style="margin-left: 5px;">
-                        <div>
+                        <el-form :label-position="labelPosition">
+                          <div>
                             <p><strong>MBMU設置</strong></p>
-                            <span>SBMU數量: </span><el-input placeholder="" style="width: 150px;"></el-input>
+                            <el-form-item label="SBMU數量:">
+                                <el-input></el-input>
+                            </el-form-item>
+
                         </div>
                         <div style="margin-top: 5px;">
-                            <span>CSC數量: </span><el-input placeholder="" style="width: 150px;"></el-input>
+                            <el-form-item label="CSC數量:">
+                                <el-input></el-input>
+                            </el-form-item>
+
                         </div>
                         <div style="margin-top: 5px;">
-                            <span>電壓數量: </span><el-input placeholder="" style="width: 150px;"></el-input>
+                            <el-form-item label="電壓數量:">
+                                <el-input></el-input>
+                            </el-form-item>
+
                         </div>
                         <div style="margin-top: 5px;">
-                            <span>溫度數量: </span><el-input placeholder="" style="width: 150px;"></el-input>
-                        </div>
+                            <el-form-item label="溫度數量:">
+                                <el-input></el-input>
+                            </el-form-item>
+
+                        </div>  
+                        </el-form>
+                        
                     </div>
                 </div>
                 <el-divider></el-divider>
@@ -65,23 +96,31 @@
                     <div class="col">
                         <div>
                             <p><strong>CAN BUS</strong></p>
-                            <span>設備型號: </span>
-                            <el-select placeholder="请选择" style="width: 150px;">
-                                <el-option>
-                                </el-option>
-                            </el-select>
+                            <el-form-item label="設備型號:">
+                                <el-select placeholder="">
+                                    <el-option label="" value=""></el-option>
+                                    <el-option label="" value=""></el-option>
+                                </el-select>
+                            </el-form-item>
+
                         </div>
                         <div style="margin-top: 10px;">
-                            <span>索引號: </span> <el-select placeholder="请选择" style="width: 150px;">
-                                <el-option>
-                                </el-option>
-                            </el-select>
+                            <el-form-item label="索引號:">
+                                <el-select placeholder="">
+                                    <el-option label="" value=""></el-option>
+                                    <el-option label="" value=""></el-option>
+                                </el-select>
+                            </el-form-item>
+                            
                         </div>
                         <div style="margin-top: 10px;">
-                            <span>通道號: </span> <el-select placeholder="请选择" style="width: 150px;">
-                                <el-option>
-                                </el-option>
-                            </el-select>
+                            <el-form-item label="通道號:">
+                                <el-select placeholder="">
+                                    <el-option label="" value=""></el-option>
+                                    <el-option label="" value=""></el-option>
+                                </el-select>
+                            </el-form-item>
+                            
                         </div>
                     </div>
                     <div class="col">
@@ -133,3 +172,18 @@
         </el-tabs>
     </div>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            labelPosition: 'right',
+            formLabelAlign: {
+                name: '',
+                region: '',
+                type: ''
+            }
+        };
+    }
+}
+</script>

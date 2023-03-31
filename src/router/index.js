@@ -55,6 +55,30 @@ const routes = [
         name: 'UserManagement',
         component: () => import('../views/pages/UserManagement.vue')
       },
+      {
+        path: '/BatteryMBMU',
+        name: 'BatteryMBMU',
+        component: () => import('../views/pages/BatteryMBMU.vue')
+      }, {
+        path: '/BatterySBMU01',
+        name: 'BatterySBMU01',
+        component: () => import('../views/pages/BatterySBMU01.vue')
+      },
+      {
+        path: '/BatterySBMU02',
+        name: 'BatterySBMU02',
+        component: () => import('../views/pages/BatterySBMU02.vue')
+      }, {
+        path: '/BatterySBMU03',
+        name: 'BatterySBMU03',
+        component: () => import('../views/pages/BatterySBMU03.vue')
+      }, {
+        path: '/BatterySBMU04',
+        name: 'BatterySBMU04',
+        component: () => import('../views/pages/BatterySBMU04.vue')
+      },
+
+
     ]
   }
 ]
