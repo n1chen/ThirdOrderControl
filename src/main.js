@@ -8,5 +8,7 @@ import 'element-plus/dist/index.css';
 
 import '@fortawesome/fontawesome-free/css/all.css'
 
+import 'echarts'
+
 
 createApp(App).use(store).use(router).use(ElementPlus).mount('#app')

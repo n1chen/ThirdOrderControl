@@ -3,21 +3,14 @@
         <h1 class="mb-3"><strong>電池組監控</strong></h1>
 <div class="row">
     <div class="col"></div>
-    <div class="col" style="padding-left: 10px;">
+    <div class="col" style="">
         <router-link :to="{name:'BatteryMBMU'}"><i class="fa-solid fa-battery-full fa-2xl"></i></router-link>
     </div>
-    <div class="col" style="padding-left: 10px;">
-        <router-link :to="{name:'BatterySBMU01'}"><i class="fa-solid fa-battery-full fa-2xl"></i></router-link>
+    <div class="col" style=" " v-for="item in PCSDemoData.slice(0,4)" :key="item.equipment_id">
+        {{ item.equipment_id }}
+        <router-link :to="{name: 'BatteryMBMU', query: { id: item.equipment_id }}"><i class="fa-solid fa-battery-full fa-2xl"></i></router-link>
     </div>
-    <div class="col" style="padding-left: 10px;">
-        <router-link :to="{name:'BatterySBMU02'}"><i class="fa-solid fa-battery-full fa-2xl"></i></router-link>
-    </div>
-    <div class="col" style="padding-left: 10px;">
-        <router-link :to="{name:'BatterySBMU03'}"><i class="fa-solid fa-battery-full fa-2xl"></i></router-link>
-    </div>
-    <div class="col" style="padding-left: 10px;">
-        <router-link :to="{name:'BatterySBMU03'}"><i class="fa-solid fa-battery-full fa-2xl"></i></router-link>
-    </div>
+ 
 </div>
         <div class="row">
             <div class="d-flex justify-content-between align-items-center mt-3">
@@ -53,12 +46,14 @@
 </template>
 <script>
 
+import PCSDemoData from '@/JSON/PCSDemoData.json';
 export default {
     components: {
 
     },
     data() {
         return {
+            PCSDemoData,
             isDisabled: true,
             tableData: [{
                 Items: '通信狀態',

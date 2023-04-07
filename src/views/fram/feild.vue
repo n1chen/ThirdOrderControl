@@ -1,51 +1,52 @@
 <template>
     <div class="wrapper">
-        <nav id="sidebar" :class="$store.state.isCollapse ? 'sidebar collapsed d-flex' : 'sidebar js-sidebar d-flex'" style="padding-right: 10px;;">
+        <nav id="sidebar" :class="$store.state.isCollapse ? 'sidebar collapsed d-flex' : 'sidebar js-sidebar d-flex'"
+            style="padding-right: 10px;;">
             <div class="sidebar-content js-simplebar">
                 <a class="sidebar-brand" href="#">
                     <img src="@/assets/FEMCBanner.png" alt="" style="height: 35px;width: auto;">
                 </a>
 
                 <ul class="sidebar-nav">
-                    <li class="sidebar-item ">
+                    <!-- <li class="sidebar-item ">
                         <a class="sidebar-link" href="#">
                             <span class="align-middle"><i
                                     class="fa-solid fa-arrow-right-from-bracket text-light"></i>關閉系統</span>
                         </a>
-                    </li>
+                    </li> -->
 
                     <div>
                         <!-- 選項展開 -->
-                        <router-link :to="{nmae: 'RealtimeMonitoring' }"><a class=" collapsed sidebar-link " href="#" data-bs-toggle="collapse"
-                            data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                            <span class="align-middle"><i class="fa-regular fa-clock text-light"></i>即時監控</span>
-                        </a></router-link>
+                        <router-link :to="{ nmae: 'RealtimeMonitoring' }"><a class=" collapsed sidebar-link " href="#"
+                                data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false"
+                                aria-controls="collapseLayouts">
+                                <span class="align-middle"><i class="fa-regular fa-clock text-light"></i>即時監控</span>
+                            </a></router-link>
                         <li class="collapse list-group-item list-group-item-action sidebar-item" id="collapseLayouts"
                             aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion" style="margin-left: 40px;">
                             <nav class="sb-sidenav-menu-nested nav">
                                 <router-link :to="{ name: 'BatteryPackMonitoring' }"><a class="sidebar-link" href="#">
-                                <span class="align-middle">電池組監控</span>
-                            </a></router-link>
+                                        <span class="align-middle">電池組監控</span>
+                                    </a></router-link>
                             </nav>
 
                         </li>
                     </div>
 
                     <li class="sidebar-item">
-                        <router-link :to="{name: 'RealtimeWarning' }"><a class="sidebar-link" href="#">
-                            <span class="align-middle"><i class="fa-solid fa-bug-slash text-light"></i>即時告警</span>
-                        </a></router-link>
-                    </li>
-                    <li class="sidebar-item">
-                        <router-link :to="{ name: 'ControlCommands' }"><a class="sidebar-link" href="#">
-                                <span class="align-middle"><i
-                                        class="fa-solid fa-screwdriver-wrench text-light"></i>控制命令</span>
+                        <router-link :to="{ name: 'RealtimeWarning' }"><a class="sidebar-link" href="#">
+                                <span class="align-middle"><i class="fa-solid fa-bug-slash text-light"></i>即時告警</span>
                             </a></router-link>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="#">
-                            <span class="align-middle"><i class="fa-solid fa-chart-line text-light"></i>即時曲線</span>
-                        </a>
+                        <router-link :to="{ name: 'ControlCommands' }"><a class="sidebar-link" href="#">
+                                <span class="align-middle"><i class="fa-solid fa-screwdriver-wrench text-light"></i>控制命令</span>
+                            </a></router-link>
+                    </li>
+                    <li class="sidebar-item">
+                        <router-link :to="{ name: 'InstantCurve' }"><a class="sidebar-link" href="#">
+                                <span class="align-middle"><i class="fa-solid fa-chart-line text-light"></i>即時曲線</span>
+                            </a></router-link>
                     </li>
                     <li class="sidebar-item">
                         <router-link :to="{ name: 'DeviceParameters' }"><a class="sidebar-link" href="#">
@@ -75,11 +76,11 @@
                 <a class="sidebar-toggle js-sidebar-toggle" @click="CollapseClick">
                     <i class="hamburger align-self-center"></i>
                 </a>
-                <div class="collapse navbar-collapse" >
-                <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#!">Sign In</a></li>
-                </ul>
-            </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#!">Sign In</a></li>
+                    </ul>
+                </div>
 
 
             </nav>

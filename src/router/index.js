@@ -54,6 +54,10 @@ const routes = [
         path: '/UserManagement',
         name: 'UserManagement',
         component: () => import('../views/pages/UserManagement.vue')
+      },{
+        path: '/InstantCurve',
+        name: 'InstantCurve',
+        component: () => import('../views/pages/InstantCurve.vue')
       },
       {
         path: '/BatteryMBMU',
